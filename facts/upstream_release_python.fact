@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+import json
+import os.path
+from dotenv import dotenv_values
+
+upstream_filename = '/etc/upstream-release/lsb-release'
+if not os.path.isfile(upstream_filename):
+	json_values='null'
+else:    
+    upstream_values = dotenv_values(upstream_filename)
+    fact_value = {
+        "upstream_distribution":upstream_values["DISTRIB_ID"],
+        "upstream_version":upstream_values["DISTRIB_RELEASE"],
+        "upstream_codename":upstream_values["DISTRIB_CODENAME"],
+        "upstream_file_path":upstream_filename
+    }
+    json_values = json.dumps(fact_value)
+print(json_values)
+	
