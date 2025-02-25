@@ -1,0 +1,11 @@
+---
+namespace: "hydrian"
+name: "hydrian"
+version: ""
+readme: "README.md"
+authors:
+    - "Hydrian" <ben.tyger@tygerclan.net>
+dependencies:
+license:
+tags:
+repository: "https://www.github.com/hydrian/ansible-role-ROLENAME"
